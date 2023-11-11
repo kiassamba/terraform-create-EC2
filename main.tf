@@ -6,6 +6,7 @@ provider "aws" {
 
 resource "aws_security_group" "instance_sg" {
   name = "terraform-test-sg"
+  vpc_id = aws_vpc.main.id
 
 
   egress {
