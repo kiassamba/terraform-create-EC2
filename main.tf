@@ -37,7 +37,7 @@ resource "aws_instance" "my_ec2_instance" {
   ami                    = var.AWS_AMIS[var.AWS_REGION]
   instance_type          = "t2.micro"
   #vpc_security_group_ids = [aws_security_group.instance_sg.id]
-  
+  subnet_id = "subnet-00fe043a825c18577"
 
   user_data = <<-EOF
       #!/bin/bash
