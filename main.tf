@@ -36,8 +36,8 @@ resource "aws_security_group" "instance_sg" {
 resource "aws_instance" "my_ec2_instance" {
   ami                    = var.AWS_AMIS[var.AWS_REGION]
   instance_type          = "t2.micro"
-  vpc_security_group_ids = [aws_security_group.instance_sg.id]
-  vpc_id = "vpc-0523badf5e163de07"
+  #vpc_security_group_ids = [aws_security_group.instance_sg.id]
+  
 
   user_data = <<-EOF
       #!/bin/bash
