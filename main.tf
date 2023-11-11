@@ -6,7 +6,7 @@ provider "aws" {
 
 resource "aws_security_group" "instance_sg" {
   name = "terraform-test-sg"
-  vpc_id = "vpc-0523badf5e163de07"
+  
 
 
   egress {
@@ -36,8 +36,8 @@ resource "aws_security_group" "instance_sg" {
 resource "aws_instance" "my_ec2_instance" {
   ami                    = var.AWS_AMIS[var.AWS_REGION]
   instance_type          = "t2.micro"
-  #vpc_security_group_ids = [aws_security_group.instance_sg.id]
-  subnet_id = "subnet-00fe043a825c18577"
+  vpc_security_group_ids = [aws_security_group.instance_sg.id]
+ 
 
   user_data = <<-EOF
       #!/bin/bash
