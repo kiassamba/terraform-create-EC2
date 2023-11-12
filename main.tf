@@ -52,7 +52,3 @@ resource "aws_instance" "my_ec2_instance" {
     Name = "terraform test"
   }
 }
-
-output "public_ip" {
-    value = aws_instance.my_ec2_instance.public_ip
-}                
